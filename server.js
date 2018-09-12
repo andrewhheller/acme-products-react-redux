@@ -3,6 +3,7 @@ const express = require('express');
 const db = require('./db');
 const { User } = db.models;
 
+
 const app = express();
 app.use(require('body-parser').json());
 
@@ -22,7 +23,7 @@ app.get('/api/users', (req, res, next)=> {
 
 app.post('/api/users', (req, res, next)=> {
   User.create(req.body)
-    .then( user => res.status(204).send(user))
+    .then( user => res.status(201).send(user))
     .catch(next);
 });
 
