@@ -12,7 +12,6 @@ const TopRatedProduct = ({ topRatedProduct }) => {
 }
 
 const mapStateToProps = ({ products }) => {
-
   const sortedProducts = products.sort((a, b) => b.rating - a.rating);
   const topRatedProduct = sortedProducts[0] ? sortedProducts[0].name : ''
 
