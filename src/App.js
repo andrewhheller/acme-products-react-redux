@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { hashRouter as Router, Route } from 'react-router';
+import { HashRouter as Router, Route } from 'react-router-dom';
 
 import { store, loadProducts } from './store';
 
 import Products from './Products';
-import ProductForm from './ProductForm';
+import TopRatedProduct from './TopRatedProduct';
 import Nav from './Nav';
 
 class App extends Component {
@@ -15,11 +15,18 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <Nav />
-        <ProductForm />
-        <Products />
-      </div>
+      // <div>
+      //   <Nav />
+      //   <ProductForm />
+      //   <Products />
+      // </div>
+      <Router>
+        <div>
+          <Nav />
+          <Route path="/products" component={Products} />
+          <Route path="/top-rated-product" component={TopRatedProduct} />
+        </div>
+      </Router>
     )
   }
 

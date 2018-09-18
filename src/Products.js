@@ -2,16 +2,19 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import Product from './Product';
+import ProductForm from './ProductForm';
 
 const Products = ({ products }) => {
 
   return (
-    <ul>
-      {
-        products.map((product, index) => <Product key={product.id} index={index} product={product} />)
-      }
-    </ul>
-    // <p>my products</p>
+    <div>
+      <ProductForm />
+      <ul>
+        {
+          products.map((product, index) => <Product key={product.id} index={index} product={product} />)
+        }
+      </ul>
+    </div>
   )
 }
 

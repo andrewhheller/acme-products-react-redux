@@ -87,6 +87,24 @@ const productsReducer = (state = [], action) => {
   return state;
 }
 
+// action constant
+const TOP_RATED_FILTER = 'TOP_RATED_FILTER';
+
+// action creator
+const _topRatedFilter = (filter) => {
+  type: TOP_RATED_FILTER,
+  filter
+}
+
+const topRatedFilterReducer = (state = '', action) => {
+
+  switch(action.type) {
+    case TOP_RATED_FILTER:
+    state = action.filter
+  }
+
+}
+
 // main reducer variable for all reducers
 const reducer = (combineReducers({
   products: productsReducer
@@ -104,5 +122,6 @@ export {
   store,
   loadProducts,
   deleteProduct,
-  createProduct
+  createProduct,
+  _topRatedFilter
 }
